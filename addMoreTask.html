@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            box-sizing: border-box;
+        }
+.container{
+  margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+}
+.tomTask{
+      flex: auto;
+      flex-direction: column;
+    /* flex:1 1 calc(33.33%); */
+    background: lightskyblue;
+    padding: 10px;
+    /* height: 150px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.weeTask{
+      flex: auto;
+        flex-direction: column;
+    /* flex:1 1 calc(33.33%); */
+    background: lightskyblue;
+    padding: 10px;
+    /* height: 150px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.monTask{
+      flex: auto;
+        flex-direction: column;
+    /* flex:1 1 calc(33.33%); */
+    background: lightskyblue;
+    padding: 10px;
+    /* height: 150px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+    </style>
+    <script>
+        var header1 = "<thead><th> </th><th> </th></thead>";
+        var tbl_data1 = header1;
+        // document.getElementById("tbl").innerHTML = "";
+
+        function addTask1() {
+            var n1 = document.getElementById("add_box1").value;
+            tbl_data1 += "<td> <input type = 'text' value ='" + n1 + "' readonly </td><td> <button onclick='edit(this)''>Edit</button></td><td> <button onclick='deletebox(this)''>Delete</button></td></tr>";
+            document.getElementById("tbl1").innerHTML = tbl_data1;
+            document.getElementById("add_box1").value = "";
+            //for the task left
+            document.getElementById("tlbox1").innerHTML += n1 + "<br>";
+
+        }
+             var header2 = "<thead><th> </th><th> </th></thead>";
+        var tbl_data2 = header2;
+        // document.getElementById("tbl").innerHTML = "";
+
+        function addTask2() {
+            var n2 = document.getElementById("add_box2").value;
+            tbl_data2 += "<td> <input type = 'text' value ='" + n2 + "' readonly </td><td> <button onclick='edit(this)''>Edit</button></td><td> <button onclick='deletebox(this)''>Delete</button></td></tr>";
+            document.getElementById("tbl2").innerHTML = tbl_data2;
+            document.getElementById("add_box2").value = "";
+            //for the task left
+            document.getElementById("tlbox2").innerHTML += n2 + "<br>";
+
+        }
+             var header3 = "<thead><th> </th><th> </th></thead>";
+        var tbl_data3 = header3;
+        // document.getElementById("tbl").innerHTML = "";
+
+        function addTask3() {
+            var n3 = document.getElementById("add_box3").value;
+            tbl_data3 += "<td> <input type = 'text' value ='" + n3 + "' readonly </td><td> <button onclick='edit(this)''>Edit</button></td><td> <button onclick='deletebox(this)''>Delete</button></td></tr>";
+            document.getElementById("tbl3").innerHTML = tbl_data3;
+            document.getElementById("add_box3").value = "";
+            //for the task left
+            document.getElementById("tlbox3").innerHTML += n3 + "<br>";
+
+        }
+        function edit(elem) {
+            debugger;
+            elem.parentElement.parentElement.children[2].children[0].readOnly = false;
+            elem.parentElement.innerHTML = "<button onclick='save(this)'>save</button>";
+
+        }
+        function save(elem) {
+            elem.parentElement.parentElement.children[2].children[0].readOnly = true;
+            elem.parentElement.innerHTML = "<button onclick='edit(this)'>Edit</button>"
+        }
+        function deletebox(elem) {
+            elem.parentElement.parentElement.remove();
+            // tbl_data = header;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="tomTask">
+            <input type="text" id="add_box1" placeholder="Enter your tomorrow's plan here...">
+            <button onclick="addTask1()">Add</button><br>
+            <table id="tbl1">
+                <br>
+            </table>
+        </div>
+        <div class="weeTask">
+            <input type="text" id="add_box2" placeholder="Enter your weekly task here...">
+            <button onclick="addTask2()">Add</button><br>
+            <table id="tbl2">
+                <br>
+            </table>
+        </div>
+        <div class="monTask">
+            <input type="text" id="add_box3" placeholder="Enter your monthly task here...">
+            <button onclick="addTask3()">Add</button><br>
+            <table id="tbl3">
+                <br>
+            </table>
+        </div>
+
+    </div>
+</body>
+
+</html>
