@@ -1,0 +1,205 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.navbar{
+    background-color: navy;
+
+    /* background: #333; */
+    /* ye color elements ko white krne ke liye */
+    /* color: white;  */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 15px;
+}
+.nav_left, .nav_right{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.icon{
+    cursor: pointer;
+    background: rgb(248, 252, 253);
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+.task_home{
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+  
+}
+.top_box{
+    flex: auto;
+    /* flex:1 1 calc(33.33%); */
+    background: #b6bfc5;
+    padding: 10px;
+    /* height: 150px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bottom_box{
+ 
+    margin: 10px;
+    background:#b6bfc5;
+       padding: 10px;
+    /* gap: 30px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+@media (max-width:600px) {
+    .top_box,.bottom_box{
+        /* flex: 1 1 100%; */
+        flex: 100%;
+    }
+}
+#container_task_stickyNote {
+    /* display: inline; */
+    /* height: 422px; */
+    width: 100%;
+    text-align: center;
+    /* border-collapse: collapse; */
+    border: 1px solid white;
+}
+
+
+.container {
+    /* z-index: 2; */
+    position: relative;
+    /* margin-left: 345px; */
+}
+
+#smallBox {
+    width: 50px;
+    /* height: 30px; */
+    background-color: bisque;
+    color: white;
+    font: 18px;
+    text-align: center;
+    line-height: 23px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+#expandBox {
+    display: none;
+    /* width: 300px; */
+    /* height: 150px; */
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid rgb(227, 205, 176);
+    border-radius: 10px;
+    resize: none;
+}
+
+#tbl {
+    background-color: rgb(163, 214, 238);
+   
+    /* width: 100%;
+    table-layout: auto; /* allows flexible column sizing */
+    /* border-collapse: collapse; */
+    /* width: 100%; */
+}
+/* #tbl th, #tbl td {
+    word-wrap: break-word;
+    white-space: normal;
+     /* max-width: 100%; */
+/* }
+
+/* Make inputs & buttons scale inside */
+/* #tbl input, #tbl button {
+    max-width: 100%;
+    box-sizing: content-box;
+} */ */ */
+
+
+#taskCompleted {
+    text-align: center;
+    border: 1px solid white;
+}
+
+#taskLeft {
+    text-align: center;
+    border: 1px solid white;
+}
+/* #tpCbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 4px;
+    margin-left: 12px;
+    margin-right: 12px;
+    background-color: rgb(175, 117, 196);
+    border-radius: 16px;
+    text-box: none;
+
+} */
+#tpCDivbox {
+    margin-top: 5px;
+    margin-left: 12px;
+    margin-right: 12px;
+    /* color: brown; */
+    border-radius: 27px;
+    text-decoration: none;
+    /* background-color: rgb(137, 75, 200); */
+
+}
+
+#tpCbox {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 4px;
+    margin-left: 12px;
+    margin-right: 12px;
+    background-color: rgb(225, 192, 236);
+
+    border-radius: 16px;
+    text-box: none;
+
+}
+#tCDivbox {
+    margin-top: 5px;
+    margin-left: 12px;
+    margin-right: 12px;
+    /* color: brown; */
+    border-radius: 27px;
+    text-decoration: none;
+    /* background-color: rgb(137, 75, 200); */
+
+}
+
+#tCbox {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 4px;
+    margin-left: 12px;
+    margin-right: 12px;
+    background-color: rgb(201, 240, 205);
+
+    border-radius: 16px;
+    text-box: none;
+
+}
+/* #myChart, #quote{
+  display: inline-block;
+} */
