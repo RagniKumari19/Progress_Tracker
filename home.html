@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="home.css">
+    <script src="home.js"></script>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="nav_left">
+            <div class="icon">&#9776; <!-- ☰ --></div>
+            <div class="icon" onclick="overAlReport()">&#9788; <!-- someting different --></div>
+        </div>
+        <div class="nav_right">
+            <div class="icon" onclick="addMoreTask()">&#43; <!-- + --></div>
+            <div class="icon" onclick="dateWise()">&#128269; <!-- 🔍 --></div>
+            <div class="icon" onclick=" timelineReport()">&#9601;&#9603;&#9605;&#9607; <!-- ▁▃▅▇ --></div>
+        </div>
+    </div>
+
+    <div class="task_home">
+        <div class="top_box">
+            <div id="container_task_stickyNote">
+                <h2>Taday's Task
+                    <hr>
+                </h2>
+                <input type="text" id="add_box" placeholder="Enter your task here...">
+                <button onclick="addTask()">Add</button><br><br>
+                <div>
+<tbody id="taskBody">
+
+    <table id="tbl">
+        <br><br>
+    </table>
+</tbody>
+                </div>
+                <div class="container" onclick="expandbox()">
+                    <div id="smallBox"><em>Note...</em></div>
+                    <textarea id="expandBox" placeholder="write your thoughts here..."></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="top_box">
+            <div id="taskCompleted">
+                <h2>Task Completed</h2>
+                <hr>
+                <div id="tCDivbox">
+                    <table id="tCbox">
+                        <br>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="top_box">
+            <!-- <div id="taskLeft">
+            <h2>Task Left </h2>
+            <hr>
+            <div id="tlDivbox">
+                <table id="tlbox">
+                    <br>
+                </table>
+            </div> -->
+
+            <div class="tpCbox">
+                <h2>partially completed task </h2>
+                <hr>
+                <div id="tpCDivbox">
+                    <table id="tpCbox">
+                        <br>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="bottom_box">
+        <div>
+            <canvas id="myChart"></canvas>
+        </div>
+        <div class="quotes">
+
+            <textarea name="quote" id="quote">for the day</textarea>
+        </div>
+        <!-- <div class="quote">
+        <h3>Quote for the day</h3> 
+        </div> -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        const ctx = document.getElementById('myChart');
+
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Completed Task', 'Partially Completed Tasks', 'Pending Tasks'],
+                datasets: [{
+                    label: 'Daily Report',
+                    data: [70, 20, 10],
+                    backgroundColor: ['rgb(255,99,100)', 'rgb(54,162,235)', 'rgb(255,205,86)'],
+
+                    // borderWidth: 1
+                }]
+            },
+            // options: {
+            //     scales: {
+            //         y: {
+            //             beginAtZero: true
+            //         }
+            //     }
+            // }
+        });
+    </script>
+
+    </div>
+
+</body>
+
+
+</html>
